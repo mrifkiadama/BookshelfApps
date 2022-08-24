@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="black" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>Bookshelf Apps</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="form">
+                        <div class="form-title">
+                            <h2>Bookshelf Apps</h2>
+                        </div>
+                        <form id="form">
+                            <div class="form-body">
+                                <input type="hidden" name="id" id="id">
+                                <div class="form-group">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input id="title" type="text" class="form-input" placeholder="Enter your title book" name="title" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="author">Author</label>
+                                    <input id="author" type="text" class="form-input" placeholder="Enter your author book" name="author" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="year">Year</label>
+                                    <input id="year" type="number" class="form-input" placeholder="Enter your year book" name="year" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="isComplete">Select Status Book</label>
+                                    <select name="isComplete" id="isComplete">
+                                    <option selected disabled>Select status</option>
+                                    <option value="false">Reading</option>
+                                    <option value="true">Finished</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="form-footer">
+                                <button type="button" class="button" style="padding: 5px 10px;" onclick="save()"><i class="fa fa-plus" style="padding: 0px 2px;"></i>Save</button>
+
+                                <!-- <button class="button" type="button" onclick="clearData()">Reset</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="search">
+                            <div class="search-title">
+                                <h3>Search Book</h3>
+                            </div>
+
+                            <div class="search-body">
+                                <div class="form-group">
+                                    <input type="text" class="input-search" placeholder="Input your title" id="searcbox" name="searchbox">
+                                    <button type="submit" class="button-search button" onclick="search()">
+                                        <i class="fa fa-search"></i>
+                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="reading">
+                            <div class="reading-title">
+                                <h3>Not finished reading</h3>
+                            </div>
+                            <div style="overflow-x:auto;">
+                                <table id="table-reading">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Title</th>
+                                            <th>Author</th>
+                                            <th>Year</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reading">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="finished">
+                            <div class="finished-title">
+                                <h3>Finished reading</h3>
+                            </div>
+
+                            <div style="overflow-x:auto;">
+                                <table id="table-finished">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Title</th>
+                                            <th>Author</th>
+                                            <th>Year</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="finished">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
